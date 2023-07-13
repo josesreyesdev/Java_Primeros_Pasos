@@ -7,17 +7,18 @@ public class Account {
     private Client holder; //titular
 
     private static int totalAccounts = 0;
-    public Account(int agency) {
+    public Account(int agency /*, int number*/) {
         if (agency <= 0) {
             System.out.println("No se permite 0");
             this.agency = 1;
+            //this.number = 0;
         } else  {
             this.agency = agency;
+            //this.number = number;
         }
         totalAccounts++;
         System.out.println("Total Accounts: "+ totalAccounts);
     }
-
 
     public void deposit(Double balance) {
         this.balance += balance;
