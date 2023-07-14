@@ -12,10 +12,7 @@ public class ExampleScope {
         double valorCompra = 250.0;
         double descuento;
 
-        if ( valorCompra > 300.0) {
-            descuento = valorCompra * .20;
-            System.out.println("Descuento del 20%, el total es: "+ (valorCompra - descuento));
-        } else if (valorCompra >= 200.0 && valorCompra < 300) {
+        if (valorCompra >= 200.0 && valorCompra < 300) {
             descuento = valorCompra * .15;
             System.out.println("Descuento del 15%, el total es: "+ ( valorCompra - descuento));
         } else if (valorCompra >= 100.0 && valorCompra < 200.0) {
