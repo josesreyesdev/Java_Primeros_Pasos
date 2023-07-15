@@ -18,6 +18,5 @@ public class MainBonusControl {
         control.recordSalary(alexis);
 
         System.out.println(control.getSum());
-
     }
 }
