@@ -2,7 +2,7 @@ package poo.bytebank_inheritance;
 
 public class MainPolymorphism {
     public static void main(String[] args) {
-        Officer officer = new Officer();
+        Officer officer = new Accountant();
         officer.setName("Diego");
 
         Manager manager = new Manager();

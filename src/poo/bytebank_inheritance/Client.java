@@ -1,6 +1,10 @@
 package poo.bytebank_inheritance;
 
-public class Client {
+import poo.bytebank_inheritance.inheritance_multiple.Auth;
+
+import java.util.Objects;
+
+public class Client implements Auth {
 
     private String holderName; //titular
     private String document;
@@ -14,12 +18,15 @@ public class Client {
         this.holderName = holderName;
     }
 
-    public String getDocument() {
-        return document;
+
+    @Override
+    public void setKey(String key) {
+
     }
 
-    public void setDocument(String document) {
-        this.document = document;
+    @Override
+    public boolean login(String key) {
+        return Objects.equals(key, "CursosAluraLatam"); //key == "CursosAluraLatam"
     }
 
     public String getPhoneNumber() {

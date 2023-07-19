@@ -1,12 +1,13 @@
 package poo.bytebank_inheritance;
 
-public class Officer { //Funcionario
+public abstract class Officer { //Funcionario
     private String name;
     private String document;
     private double salary;
     private int type;
 
-    public Officer() { }
+    public Officer() {
+    }
 
     public String getName() {
         return name;
@@ -40,8 +41,5 @@ public class Officer { //Funcionario
         this.type = type;
     }
 
-    public double getBonus() {
-        // Si type is 0 es funcionario, si type es 1 es gerente
-            return this.salary * 0.1;
-    }
+    public abstract double getBonus();
 }

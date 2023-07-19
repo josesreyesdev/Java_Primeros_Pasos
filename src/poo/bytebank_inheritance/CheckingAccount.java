@@ -7,6 +7,11 @@ public class CheckingAccount extends Account {
         super(agency, number);
     }
 
+    @Override
+    public void deposit(Double balance) {
+        this.balance += balance;
+    }
+
     //Sobre-escritura
     @Override
     public boolean withdrawAccountBalance(Double balance) {

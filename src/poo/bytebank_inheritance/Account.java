@@ -2,9 +2,9 @@ package poo.bytebank_inheritance;
 
 import poo.project_bytebank.Client;
 
-public class Account {
-    private double balance;
-    private int agency;
+public abstract class Account {
+    protected double balance;
+    private int agency = 1;
     private int number;
     private Client holder; //titular
 
@@ -23,9 +23,7 @@ public class Account {
         System.out.println("Total Accounts: "+ totalAccounts);
     }
 
-    public void deposit(Double balance) {
-        this.balance += balance;
-    }
+    public abstract void deposit(Double balance);
 
     public boolean withdrawAccountBalance(Double balance) { //retirar
         if (isValidBalance(balance)) {

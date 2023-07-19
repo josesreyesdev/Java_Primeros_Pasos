@@ -2,7 +2,7 @@ package poo.bytebank_inheritance;
 
 public class MainBonusControl {
     public static void main(String[] args) {
-        Officer diego = new Officer();
+        Officer diego = new Accountant();
         diego.setSalary(2000.0);
 
         Manager jimena = new Manager();

@@ -1,39 +1,37 @@
 package poo.bytebank_inheritance;
 
+import poo.bytebank_inheritance.inheritance_multiple.Auth;
+
 import java.util.Objects;
 
-public class Manager extends Officer { //Gerente
+public class Manager extends Officer implements Auth { //Gerente
+    private String password;
 
-    private String key;
-    private int password;
-
-    public int getPassword() {
-        return password;
-    }
-
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
+    @Override
     public void setKey(String key) {
-        this.key = key;
+        this.password = key;
     }
 
+    @Override
     public boolean login(String key) {
-        return Objects.equals(key, "CoursesAluraLatam"); // key == "CursosAluraLatam"
+        return Objects.equals(this.password, key); //this.key == key
     }
 
     //Sobre-escritura del metodo
     public double getBonus() {
-        return super.getSalary() + super.getBonus();
+        return super.getSalary() + this.getSalary() * 0.05;
     }
 
     //Sobre-carga
-    public boolean authenticate( int password) {
+    public boolean auth( String password) {
         return this.password == password;
     }
 
-    public boolean authenticate( String login, int password) {
+    public boolean auth( String login, String password) {
         return this.password == password;
     }
 }
