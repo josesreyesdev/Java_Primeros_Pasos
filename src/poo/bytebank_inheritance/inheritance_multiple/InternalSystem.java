@@ -1,9 +1,9 @@
 package poo.bytebank_inheritance.inheritance_multiple;
 
 public class InternalSystem {
-    private String password = "1234";
     public void authUser(Auth auth) {
-        boolean youCanLogin = auth.login(this.password);
+        String password = "CoursesAluraOnline";
+        boolean youCanLogin = auth.login(password);
         if (youCanLogin) {
             System.out.println("Login success");
         } else System.out.println("Login error");

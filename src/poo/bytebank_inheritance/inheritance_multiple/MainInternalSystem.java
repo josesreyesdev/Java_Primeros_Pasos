@@ -4,7 +4,9 @@ import poo.bytebank_inheritance.Manager;
 
 public class MainInternalSystem {
     public static void main(String[] args) {
+
         InternalSystem internalSystem = new InternalSystem();
+
         Manager manager = new Manager();
         Admin admin = new Admin();
 
