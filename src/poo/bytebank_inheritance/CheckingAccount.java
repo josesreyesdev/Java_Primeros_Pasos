@@ -1,5 +1,6 @@
 package poo.bytebank_inheritance;
 
+import poo.bytebank_inheritance.exception.InsufficientBalanceException;
 import poo.bytebank_inheritance.inheritance_multiple.account.Tributation;
 
 //Cuenta corriente
@@ -16,9 +17,9 @@ public class CheckingAccount extends Account implements Tributation {
 
     //Sobre-escritura
     @Override
-    public boolean withdrawAccountBalance(Double balance) {
+    public void withdrawAccountBalance(Double balance) throws InsufficientBalanceException {
         double commission = balance + 0.2;
-        return super.withdrawAccountBalance(commission);
+        super.withdrawAccountBalance(commission);
     }
 
     @Override

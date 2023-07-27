@@ -1,5 +1,6 @@
 package poo.bytebank_inheritance;
 
+import poo.bytebank_inheritance.exception.InsufficientBalanceException;
 import poo.project_bytebank.Client;
 
 public abstract class Account {
@@ -11,10 +12,11 @@ public abstract class Account {
     private static int totalAccounts = 0;
 
     public Account(int agency, int number) {
-        if (agency <= 0) {
-            System.out.println("No se permite 0");
+        if (agency < 1 || number < 1) {
             this.agency = 1;
             this.number = 0;
+            System.out.println("No se permite valores menores a 1");
+            throw new IllegalArgumentException("Invalid agency or invalid number");
         } else  {
             this.agency = agency;
             this.number = number;
@@ -25,18 +27,22 @@ public abstract class Account {
 
     public abstract void deposit(Double balance);
 
-    public boolean withdrawAccountBalance(Double balance) { //retirar
-        if (isValidBalance(balance)) {
-            this.balance -= balance;
-            return true;
+    public void withdrawAccountBalance(Double balance) throws InsufficientBalanceException{ //retirar
+
+        if (this.balance < balance) {
+            throw new InsufficientBalanceException("Saldo Insuficiente, tienes: $" + this.getBalance());
         }
-        return false;
+        this.balance -= balance;
     }
 
     public boolean transfer(Double balance, Account account) {
         if (isValidBalance(balance)) {
             account.deposit(balance);
-            withdrawAccountBalance(balance);
+            try {
+                withdrawAccountBalance(balance);
+            } catch (InsufficientBalanceException e) {
+                throw new RuntimeException(e);
+            }
             //this.balance -= balance;
             return true;
         } else {
