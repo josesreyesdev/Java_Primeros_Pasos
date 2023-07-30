@@ -1,4 +1,4 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.model;
 
 import poo.bytebank_inheritance.inheritance_multiple.Auth;
 import poo.bytebank_inheritance.inheritance_multiple.utils.AuthUtil;

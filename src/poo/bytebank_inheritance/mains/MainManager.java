@@ -1,4 +1,6 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.mains;
+
+import poo.bytebank_inheritance.model.Manager;
 
 public class MainManager {
     public static void main(String[] args) {

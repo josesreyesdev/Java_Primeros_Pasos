@@ -1,8 +1,13 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.model;
 
 import poo.bytebank_inheritance.exception.InsufficientBalanceException;
 import poo.project_bytebank.Client;
 
+/**
+ * Class account
+ * @version 1.0
+ * @author Jose
+ */
 public abstract class Account {
     protected double balance;
     private int agency = 1;
@@ -11,6 +16,11 @@ public abstract class Account {
 
     private static int totalAccounts = 0;
 
+    /**
+     * Instancia una cuenta usando agencia y numero
+     * @param agency
+     * @param number
+     */
     public Account(int agency, int number) {
         if (agency < 1 || number < 1) {
             this.agency = 1;
@@ -27,6 +37,11 @@ public abstract class Account {
 
     public abstract void deposit(Double balance);
 
+    /**
+     * Este metodo retira dinero de la cuenta y si ocurre un error muestra un error
+     * @param balance
+     * @throws InsufficientBalanceException
+     */
     public void withdrawAccountBalance(Double balance) throws InsufficientBalanceException{ //retirar
 
         if (this.balance < balance) {
@@ -73,5 +88,10 @@ public abstract class Account {
 
     public static int getTotalAccounts() {
         return totalAccounts;
+    }
+
+    @Override
+    public String toString() {
+        return "Number: " + this.number + ", Agency: " + this.agency;
     }
 }

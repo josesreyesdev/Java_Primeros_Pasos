@@ -1,7 +1,7 @@
 package poo.bytebank_inheritance.inheritance_multiple;
 
 
-import poo.bytebank_inheritance.Officer;
+import poo.bytebank_inheritance.model.Officer;
 import poo.bytebank_inheritance.inheritance_multiple.utils.AuthUtil;
 
 public class Admin extends Officer implements Auth {

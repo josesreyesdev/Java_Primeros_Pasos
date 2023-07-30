@@ -1,4 +1,4 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.model;
 
 public class Accountant extends Officer{
     public double getBonus() {

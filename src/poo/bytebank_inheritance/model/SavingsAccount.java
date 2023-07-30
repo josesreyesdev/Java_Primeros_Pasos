@@ -1,4 +1,4 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.model;
 
 //Cuenta de Ahorro
 public class SavingsAccount extends Account{
@@ -10,5 +10,10 @@ public class SavingsAccount extends Account{
     @Override
     public void deposit(Double balance) {
         this.balance += balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Savings Account (Cuenta de Ahorro), " + super.toString();
     }
 }

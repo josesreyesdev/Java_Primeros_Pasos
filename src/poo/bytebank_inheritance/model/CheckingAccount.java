@@ -1,4 +1,4 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.model;
 
 import poo.bytebank_inheritance.exception.InsufficientBalanceException;
 import poo.bytebank_inheritance.inheritance_multiple.account.Tributation;
@@ -25,5 +25,10 @@ public class CheckingAccount extends Account implements Tributation {
     @Override
     public double getTaxValue() {
         return super.balance * 0.01;
+    }
+
+    @Override
+    public String toString() {
+        return "Checking Account (Cuenta corriente), " + super.toString();
     }
 }

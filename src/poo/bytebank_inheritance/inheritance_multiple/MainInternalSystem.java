@@ -1,6 +1,6 @@
 package poo.bytebank_inheritance.inheritance_multiple;
 
-import poo.bytebank_inheritance.Manager;
+import poo.bytebank_inheritance.model.Manager;
 
 public class MainInternalSystem {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package poo.bytebank_inheritance.exception;
 
-import poo.bytebank_inheritance.Account;
-import poo.bytebank_inheritance.SavingsAccount;
+import poo.bytebank_inheritance.model.Account;
+import poo.bytebank_inheritance.model.SavingsAccount;
 
 public class MainAccountException {
     public static void main(String[] args) {

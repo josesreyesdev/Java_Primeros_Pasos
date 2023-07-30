@@ -1,6 +1,6 @@
 package poo.bytebank_inheritance.inheritance_multiple.account;
 
-import poo.bytebank_inheritance.CheckingAccount;
+import poo.bytebank_inheritance.model.CheckingAccount;
 
 public class MainTributation {
     public static void main(String[] args) {

@@ -1,4 +1,8 @@
-package poo.bytebank_inheritance;
+package poo.bytebank_inheritance.mains;
+
+import poo.bytebank_inheritance.model.Accountant;
+import poo.bytebank_inheritance.model.Manager;
+import poo.bytebank_inheritance.model.Officer;
 
 public class MainPolymorphism {
     public static void main(String[] args) {
