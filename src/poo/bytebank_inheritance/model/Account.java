@@ -1,14 +1,14 @@
 package poo.bytebank_inheritance.model;
 
+import org.jetbrains.annotations.NotNull;
 import poo.bytebank_inheritance.exception.InsufficientBalanceException;
-import poo.project_bytebank.Client;
 
 /**
  * Class account
  * @version 1.0
  * @author Jose
  */
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
     protected double balance;
     private int agency = 1;
     private int number;
@@ -78,6 +78,10 @@ public abstract class Account {
         return agency;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
     public void setHolder(Client holder) {
         this.holder = holder;
     }
@@ -92,6 +96,22 @@ public abstract class Account {
 
     @Override
     public String toString() {
-        return "Number: " + this.number + ", Agency: " + this.agency;
+        return "Number: " + this.number + ", Agency: " + this.agency /* + ", Name: " + this.holder.getHolderName()*/;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Account cta = (Account) obj;
+        return this.agency == cta.getAgency() &&
+                this.number == cta.getNumber();
+    }
+
+    @Override
+    public int compareTo(@NotNull Account o) {
+        /* Orden natural: Numero de Agencia */
+        // return Integer.compare(this.agency, o.getAgency());
+
+        /* Orden natural: Balance o saldo */
+        return Double.compare(this.getBalance(), o.getBalance());
     }
 }
